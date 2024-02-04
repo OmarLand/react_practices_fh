@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 
-export const AddCategory = ( {onSetCategories} ) => {
+export const AddCategory = ( {onNewCategory} ) => {
 
     const [inputValue, setInputValue] = useState("")
 
@@ -13,16 +13,19 @@ export const AddCategory = ( {onSetCategories} ) => {
     const onSubmit = ( event ) => {
         event.preventDefault(); // Pausar resultado en consola
 
-        if( inputValue.trim().length <= 1 ) return; // Evita meter datos indeseados
 
-        onSetCategories( categories =>[ inputValue, ...categories ] );
+        if( inputValue.trim().length <= 1 ) return; // Evita meter datos no deseados
+
+        // onSetCategories( categories => [ inputValue, ...categories ] );
+        
+        onNewCategory( inputValue.trim() )
         setInputValue('');
     }
 
 
     return (
         <form onSubmit={ onSubmit }>
-            <input 
+            <input  
                 type="text" 
                 placeholder='Buscar gifs'
                 value={ inputValue }

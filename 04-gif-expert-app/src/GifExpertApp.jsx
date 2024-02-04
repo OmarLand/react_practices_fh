@@ -6,11 +6,14 @@ export const GifExpertApp = () => {
   // const [categories, setCategories] = useState([ 'Dragon Ball','Death Note' ]);
   const [categories, setCategories] = useState([]);
 
-  //const onAddCategory = () => {
-    //setCategories([...categories, "tekken"]);
+  const onAddCategory = ( newCategory ) => {
+
+    if ( categories.includes(newCategory) ) return;
+
+    setCategories([ newCategory, ...categories]);
     // setCategories( cat => [ ...cat, "tekken" ] );
 
-  //}
+  }
 
   return (
     <>
@@ -19,7 +22,10 @@ export const GifExpertApp = () => {
 
 
         {/* Input */}
-        <AddCategory onSetCategories={ setCategories } />
+        <AddCategory 
+          // onSetCategories={ setCategories }
+          onNewCategory = { event => onAddCategory(event) }  
+        />
 
 
         {/* Listado de los Gif! */}
