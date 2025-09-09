@@ -1,12 +1,15 @@
 import { CounterApp } from "./CounterApp";
 import { FirstApp } from "./FirstApp";
+import { Nombre } from "./ComponentPruebas";
 
 export function App() {
 
     return (<>
-        {/* <div>Omar Landaeta Full stack Web Developer</div> */}
-        {/* <FirstApp title = 'Soy Omar Landaeta'/> */}
-        <CounterApp value = { 100 } />
+        <h2>Omar Landaeta Full stack Web Developer</h2>
+        <FirstApp title = 'Soy Omar Landaeta' subtitle="Lo que fuere"/>
+        <CounterApp value = { 1 } />
+
+        <Nombre/>
     </>)
 
 }

@@ -13,6 +13,7 @@ export const AddCategory = ( {onNewCategory} ) => {
     const onSubmit = ( event ) => {
         event.preventDefault(); // Pausar resultado en consola
         if( inputValue.trim().length <= 1 ) return; // Evita meter datos no deseados
+        
         // onSetCategories( categories => [ inputValue, ...categories ] );
         onNewCategory( inputValue.trim() )
         setInputValue('');
