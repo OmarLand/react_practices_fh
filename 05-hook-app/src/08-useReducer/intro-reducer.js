@@ -1,12 +1,11 @@
 
-
 const initialState = [{
     id   : 1,
     todo : 'Recolectar la piedra del Alma',
     done : false,
 }];
 
-const todoReducer = ( state = initialState, action={} ) => {
+const todoReducer = ( state = initialState, action = {} ) => {
     
     if( action.type === '[TODO] add todo' ){
         return [ ...state, action.payload ];
